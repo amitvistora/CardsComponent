@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Box } from '@mui/material';
+import  InfoCard from './components/InfoCard/cards';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Box display="flex" flexWrap="wrap" p={2}>
+        <InfoCard
+          title="Data Source"
+          logo="/images/snowflake-logo.svg"
+          mainTech="Snowflake"
+          name="Data Source 1"
+          addedOn="03 Mar 2023 14:30"
+        />
+        
+        <InfoCard
+          title="Data Pipeline"
+          logo="/images/airflow-logo.svg"
+          mainTech="Apache Airflow"
+          name="Data Pipeline 1"
+          addedOn="03 Mar 2023 14:30"
+        />
+
+<InfoCard
+          title="Data Analysis"
+          logo="/images/airflow-logo.svg"
+          mainTech="Apache Airflow"
+          name="Data Pipeline 1"
+          addedOn="03 Mar 2023 14:30"
+        />
+      </Box>
     </div>
   );
 }
