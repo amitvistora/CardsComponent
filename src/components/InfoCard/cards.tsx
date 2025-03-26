@@ -26,21 +26,12 @@ export const InfoCard: React.FC<InfoCardProps> = ({
   name,
   addedOn,
 }) => {
-  const rainbowColors = [
-    "#FF0000", // Red
-    
-   
-    "#008000", // Green
-    "#0000FF", // Blue
-    "#4B0082", // Indigo
-   
-  ];
+  const rainbowColors = ["#FF0000", "#008000", "#0000FF", "#4B0082"];
 
-  
   const titleBgColor = useMemo(() => {
     const randomIndex = Math.floor(Math.random() * rainbowColors.length);
     const baseColor = rainbowColors[randomIndex];
-    return lighten(baseColor, 0.3); 
+    return lighten(baseColor, 0.3);
   }, []);
 
   return (
@@ -124,7 +115,7 @@ export const InfoCard: React.FC<InfoCardProps> = ({
           <Typography variant="body1" fontWeight={700}>
             {name}
           </Typography>
-          <Typography variant="caption" mt={1} >
+          <Typography variant="caption" mt={1}>
             <Box component="span" color="text.secondary">
               Added on
             </Box>
