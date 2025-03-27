@@ -30,6 +30,7 @@ export const InfoCard: React.FC<InfoCardProps> = ({
 
   return (
     <Card
+     data-testid="info-card"
       variant="outlined"
       sx={{
         minWidth: 383,
@@ -53,6 +54,7 @@ export const InfoCard: React.FC<InfoCardProps> = ({
   >
     <Box display="flex" alignItems="center" gap={2} flex={1} />
     <Typography
+      data-testid="info-card-title"
       variant="subtitle1"
       sx={{
         display: "flex",
@@ -78,7 +80,7 @@ export const InfoCard: React.FC<InfoCardProps> = ({
         {title}
       </span>
     </Typography>
-    <IconButton size="small" sx={{ p: 0, mr: 2 }}>
+    <IconButton data-testid="info-card-menu-button" size="small" sx={{ p: 0, mr: 2 }}>
       <MoreHoriz fontSize="small" />
     </IconButton>
   </Box>
@@ -89,7 +91,9 @@ export const InfoCard: React.FC<InfoCardProps> = ({
         <Divider sx={{ position: "absolute", width: "100%", top: "50%" }} />
 
         <Avatar
+        data-testid="info-card-logo"
           src={logo}
+          alt="logo"
           sx={{
             position: "absolute",
             left: 16,

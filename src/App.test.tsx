@@ -1,9 +1,13 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders card components', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  
+  
+  const cards = screen.getAllByTestId('info-card');
+  expect(cards.length).toBe(2);
+  
+  
+  expect(screen.getAllByTestId('info-card-title').length).toBe(2);
 });
