@@ -22,14 +22,6 @@ function App() {
           name="Data Pipeline 1"
           addedOn="03 Mar 2023 14:30"
         />
-
-<InfoCard
-          title="Data Analysis"
-          logo="/images/airflow-logo.svg"
-          mainTech="Apache Airflow"
-          name="Data Pipeline 1"
-          addedOn="03 Mar 2023 14:30"
-        />
       </Box>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { MoreHoriz } from "@mui/icons-material";
 import {
   Card,
@@ -8,7 +8,6 @@ import {
   Box,
   IconButton,
   Avatar,
-  lighten,
 } from "@mui/material";
 
 interface InfoCardProps {
@@ -26,19 +25,15 @@ export const InfoCard: React.FC<InfoCardProps> = ({
   name,
   addedOn,
 }) => {
-  const rainbowColors = ["#FF0000", "#008000", "#0000FF", "#4B0082"];
-
-  const titleBgColor = useMemo(() => {
-    const randomIndex = Math.floor(Math.random() * rainbowColors.length);
-    const baseColor = rainbowColors[randomIndex];
-    return lighten(baseColor, 0.3);
-  }, []);
+  const titleBgColor =
+    title === "Data Source" ? "rgb(68,156,157)" : "rgb(65,121,170)";
 
   return (
     <Card
       variant="outlined"
       sx={{
-        minWidth: 350,
+        minWidth: 383,
+        height: 196,
         m: 2,
         borderRadius: 2,
         boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.05)",
@@ -48,47 +43,48 @@ export const InfoCard: React.FC<InfoCardProps> = ({
           boxShadow: "0px 6px 16px rgba(0, 0, 0, 0.1)",
         },
       }}
+    >   <Box
+    display="flex"
+    justifyContent="space-between"
+    alignItems="center"
+    
+    height={40}
+    sx={{ bgcolor: "#f0f4f4" }}
+  >
+    <Box display="flex" alignItems="center" gap={2} flex={1} />
+    <Typography
+      variant="subtitle1"
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        width: 82,
+        height: 20,
+        fontWeight: 700,
+        color: "white",
+        bgcolor: titleBgColor,
+        borderRadius: "50px",
+        cursor: "pointer",
+        mr: 2,
+      }}
     >
-      <Box position="relative" height={110}>
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          p={1}
-          height={40}
-          sx={{ bgcolor: "#f0f4f4" }}
-        >
-          <Box display="flex" alignItems="center" gap={2} flex={1} />
-          <Typography
-            variant="subtitle1"
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontWeight: 700,
-              color: "white",
-              bgcolor: titleBgColor,
-              borderRadius: "50px",
-              px: 1.7,
-              py: 0.2,
-              mr: 2,
-              cursor: "pointer",
-            }}
-          >
-            <span
-              style={{
-                fontSize: "0.75rem",
-                textAlign: "center",
-                width: "100%",
-              }}
-            >
-              {title}
-            </span>
-          </Typography>
-          <IconButton size="small" sx={{ p: 0 }}>
-            <MoreHoriz fontSize="small" />
-          </IconButton>
-        </Box>
+      <span
+        style={{
+          fontSize: "0.65rem",
+          textAlign: "center",
+          width: "100%",
+        }}
+      >
+        {title}
+      </span>
+    </Typography>
+    <IconButton size="small" sx={{ p: 0, mr: 2 }}>
+      <MoreHoriz fontSize="small" />
+    </IconButton>
+  </Box>
+
+      <Box position="relative">
+       
 
         <Divider sx={{ position: "absolute", width: "100%", top: "50%" }} />
 
@@ -99,23 +95,27 @@ export const InfoCard: React.FC<InfoCardProps> = ({
             left: 16,
             top: "50%",
             transform: "translate(0, -50%)",
-            width: 60,
-            height: 60,
+            width: 54,
+            height: 54,
             border: "5px solid #fff",
             boxShadow: 2,
             bgcolor: "background.paper",
+            "& img": {
+              width: 42,
+              height: 42,
+            },
           }}
         />
       </Box>
-      <CardContent sx={{ pt: 1, mt: -2 }}>
-        <Box display="flex" flexDirection="column" gap={1}>
+      <CardContent sx={{ p: 2, mt: "24px" }}>
+        <Box display="flex" flexDirection="column">
           <Typography variant="body2" color="text.secondary">
             {mainTech}
           </Typography>
           <Typography variant="body1" fontWeight={700}>
             {name}
           </Typography>
-          <Typography variant="caption" mt={1}>
+          <Typography variant="caption" mt={2}>
             <Box component="span" color="text.secondary">
               Added on
             </Box>
