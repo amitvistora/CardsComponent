@@ -1,12 +1,13 @@
 import './App.css';
 import { Box } from '@mui/material';
 import  InfoCard from './components/InfoCard/cards';
+import UserTable from './components/DataStore/UserTable';
 
 
 function App() {
   return (
     <div className="App">
-      <Box display="flex" flexWrap="wrap" p={2}>
+      {/* <Box display="flex" flexWrap="wrap" p={2}>
         <InfoCard
           title="Data Source"
           logo="/images/snowflake-logo.svg"
@@ -22,7 +23,9 @@ function App() {
           name="Data Pipeline 1"
           addedOn="03 Mar 2023 14:30"
         />
-      </Box>
+      </Box> */}
+
+      <UserTable/>
     </div>
   );
 }
