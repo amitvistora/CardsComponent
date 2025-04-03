@@ -101,7 +101,7 @@ export const InfoCard: React.FC<InfoCardProps> = ({
             transform: "translate(0, -50%)",
             width: 54,
             height: 54,
-            border: "5px solid #fff",
+            border: "5px solid #a09f9f",
             boxShadow: 2,
             bgcolor: "background.paper",
             "& img": {
